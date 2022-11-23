@@ -1,0 +1,260 @@
+/* ================= background data ======================= */
+*{
+    margin: 0;
+    overflow: hidden;
+}
+body{
+    background-color: blueviolet;
+    background-image: url(background1.png);
+    background-repeat: no-repeat;
+    background-size:cover;
+}
+/* ================= player movement ======================= */
+@keyframes move1to6{
+    0%{
+        margin: 470px 0 0 30px;
+    }
+    33%{
+        margin: 470px 0 0 310px;
+        /* transform: translate(290px, 0px); */
+    }
+    66%{
+        margin: 380px 0 0 310px;
+        /* transform: translate(290px, -90px); */
+    }
+    100%{
+        margin: 380px 0 0 220px;
+        /* transform: translate(190px, -90px); */
+    }
+}
+@keyframes move6to4{
+    0%{
+        margin:380px 0 0 220px;
+    }
+    100%{
+        margin: 470px 0 0 310px;
+    }
+}
+@keyframes move4to7{
+    0%{
+        margin: 470px 0 0 310px;
+    }
+    25%{
+        margin: 380px 0 0 310px;
+    }
+    100%{
+        margin: 380px 0 0 126px;
+    }
+}
+@keyframes move7to14{
+    0%{
+        margin: 380px 0 0 126px;
+    }
+    100%{
+        margin: 200px 0 0 220px;
+    }
+}
+@keyframes move14to16{
+    0%{
+        margin: 200px 0 0 220px;
+    }
+    100%{
+        margin: 200px 0 0 30px;
+    }
+}
+/* ================= Dice roll (animation) ================= */
+@keyframes roll{
+    0%{
+        background-image: url(/dice/dice1.jpg);
+    }
+    10%{
+        background-image: url(/dice/dice3.jpg);
+    }
+    20%{
+        background-image: url(/dice/dice6.jpg);
+    }
+    30%{
+        background-image: url(/dice/dice2.jpg);
+    }
+    40%{
+        background-image: url(/dice/dice5.jpg);
+    }
+    50%{
+        background-image: url(/dice/dice4.jpg);
+    }
+    60%{
+        background-image: url(/dice/dice1.jpg);
+    }
+    70%{
+        background-image: url(/dice/dice6.jpg);
+    }
+    80%{
+        background-image: url(/dice/dice3.jpg);
+    }
+    90%{
+        background-image: url(/dice/dice5.jpg);
+    }
+    100%{
+        background-image: url(/dice/dice4.jpg);
+    }
+}
+/* ================= player A ============================== */
+#b5{
+    width: 60px;
+    height: 60px;
+    text-align: center;
+    color: white;
+    font-weight: bold;
+    background-color: red;
+    border: 2px solid black;
+    border-radius: 100%;
+}
+.A{
+    margin: 470px 0 0 30px;
+}
+.B{
+    animation-name: move1to6;
+    animation-duration: 3s;
+    margin: 380px 0 0 220px;
+}
+.C{
+    animation-name: move6to4;
+    animation-duration: 1s;
+    margin: 470px 0 0 310px;
+}
+.D{
+    animation-name: move4to7;
+    animation-duration: 2s;
+    margin: 380px 0 0 126px;
+}
+.E{
+    animation-name: move7to14;
+    animation-duration: 2s;
+    margin: 200px 0 0 220px;
+}
+.F{
+    animation-name: move14to16;
+    animation-duration: 2s;
+    margin: 200px 0 0 30px;
+}
+/* ============= button design ===================== */
+button{
+    font-weight: bold;
+    height: 40px;
+    width: 100px;
+    color: white;
+    background-color: black;
+}
+button:active{
+    background-color: white;
+    color: black;
+}
+/* ============== buttons(ROLL DICE) ================ */
+#RD1{
+    margin: 600px 260px;
+    position: fixed;
+}
+#RD2{
+    margin: 600px 260px;
+    position: fixed;
+}
+#RD3{
+    margin: 600px 260px;
+    position: fixed;
+}
+/* ============== indexing section =============== */
+.z1{
+    z-index: 1;
+}
+.z2{
+    z-index: 2;
+}
+.z3{
+    z-index: 3;
+}
+.z4{
+    z-index: 4;
+}
+/* =============== pop up ======================== */
+#pop1{
+    position: fixed;
+    width: 70%;
+    border: 2px solid black;
+    background-color: lightgrey;
+    text-align:center;
+    font-size: 14px;
+}
+#pop2{
+    position: fixed;
+    width: 70%;
+    border: 2px solid black;
+    background-color: lightgrey;
+    text-align:center;
+    font-size: 14px;
+}
+.p1{
+    margin-top: -1000px;
+}
+.p2{
+    transition: 3.5s;
+    margin: -150px 0 0 4%;
+}
+.p3{
+    display:none;
+}
+/* ================== dice rolling ============================== */
+#dice{
+    width: 100px;
+    height: 100px;
+    background-color: green;
+    border: 2px solid black;
+    display: block;
+    position: fixed;
+    margin: 570px 0 0 50px;
+    
+    background-size: contain;
+}
+.diceroll{
+    animation-name: roll;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+}
+.dice5{
+    background-image: url(/dice/dice5.jpg);
+}
+.dice3{
+    background-image: url(/dice/dice3.jpg);
+}
+.dice2{
+    background-image: url(/dice/dice2.jpg);
+}
+/* ====================== end ==================== */
+#win{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: url(win.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    z-index: 5;
+}
+a{
+    text-decoration: none;
+    color: white;
+    position: absolute;
+    background-color: red;
+    font-weight: bold;
+    box-sizing: content-box;
+    border: 2px solid black;
+    border-radius: 10px;
+    margin: 500px 150px;
+    padding: 10px;
+    z-index: 6;
+    transition: 1s;
+}
+.noshow{
+    display: none;
+}
+.show{
+    transition: 1s;
+}
